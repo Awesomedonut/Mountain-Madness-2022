@@ -16,9 +16,6 @@ window.addEventListener('load', () => {
             counter = 0; 
 
             myInterval = setInterval(()=>{
-                
-
-
                 if (counter == 19){
                     debounce = true; 
                     clearInterval(myInterval)
@@ -29,13 +26,21 @@ window.addEventListener('load', () => {
 
                 counter++; 
 
-    
-
                 if (health == 0){
+                    let timer_counter = 0; 
+
+                    timer = setInterval(()=>{
+                        timer_counter++;
+                        if (timer_counter == 5){
+                            clearInterval(timer); 
+                            title_btn.style.backgroundColor = "Green"; 
+                            title_btn.innerHTML = "Continue";  
+                        }
+                    }, 1000) 
+
                     tutorial_person.style.opacity = 1; 
                     tutorial_text.style.opacity = 1; 
-                    title_btn.style.backgroundColor = "Green"; 
-                    title_btn.innerHTML = "Continue";                    
+                                  
 
                     const app = document.getElementById("tutorial-text")
 
@@ -48,7 +53,7 @@ window.addEventListener('load', () => {
                         autoStart: true,
                         loop: true, 
                         delay: 60,
-                        pauseFor: 3000,
+                        pauseFor: 1000,
 
                     })
                 }
