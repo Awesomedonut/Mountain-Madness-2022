@@ -2,26 +2,62 @@ let health = 100;
 
 window.addEventListener('load', () => {
     title_btn = document.getElementsByClassName('Title-Btn')[0];
-    green_bar = document.getElementsByClassName('Green-Bar')[0];  
+    green_bar = document.getElementsByClassName('Green-Bar')[0]; 
+    health_text = document.getElementsByClassName('Health-Text')[0];
+    tutorial_person = document.getElementById("tutorial") 
+    tutorial_text = document.getElementById("tutorial-text")
+    
+    debounce = true; 
 
     title_btn.addEventListener('click', () => {
-        counter = 0; 
+        if (debounce){
+            debounce = false; 
 
-        myInterval = setInterval(()=>{
-            if (counter == 19){
-                clearInterval(myInterval)
+            counter = 0; 
+
+            myInterval = setInterval(()=>{
+                
+
+
+                if (counter == 19){
+                    debounce = true; 
+                    clearInterval(myInterval)
+                }
+                health = health - 1; 
+                green_bar.style.width = health+"%"
+                health_text.innerHTML = health + " / 100"
+
+                counter++; 
+
+    
+
+                if (health == 0){
+                    tutorial_person.style.opacity = 1; 
+                    tutorial_text.style.opacity = 1; 
+                    title_btn.style.backgroundColor = "Green"; 
+                    title_btn.innerHTML = "Continue";                    
+
+                    const app = document.getElementById("tutorial-text")
+
+                    let typewriter = new Typewriter(app, {
+                        strings: [
+                        "YOu did so GOOOD",
+                        "Your so amazing!!!", 
+                        "You totally 'Killed' it",
+                        ], 
+                        autoStart: true,
+                        loop: true, 
+                        delay: 60,
+                        pauseFor: 3000,
+
+                    })
+                }
+            }, 50)
+
+            
+            if (health <= 0){
+                window.location.href = "page_1.html"
             }
-            health = health - 1; 
-            green_bar.style.width = health+"%"
-
-            counter++; 
-
-            console.log(health); 
-        }, 50)
-
-
-        if (health <= 0){
-            window.location.href = "page_1.html"
         }
     })
 })

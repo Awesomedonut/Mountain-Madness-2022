@@ -14,10 +14,17 @@
     align-items: center;
     font-family: 'Press Start 2P', cursive;}
 
-.Container button{
+.Container .Title-Btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px; 
     background-color: red;
     width: 25%; 
+    height: 7%; 
+    border-radius: 15px; 
+    border: 0px; 
+    z-index: 3;
 }
 
 .Health-Bar{
@@ -39,6 +46,41 @@
 
 .active .Green-Bar{
     opacity: 1; 
+}
+
+.Health-Text{
+    position: absolute; 
+    top: 25px; 
+
+    z-index: 2;
+}
+
+#tutorial{
+    position: absolute;
+    right: 0;
+    bottom: 0; 
+    object-fit: contain; 
+    width: 50%;
+    height: 50%; 
+    opacity: 0;
+    transition: all 3s ease;
+
+
+}
+
+.active{
+    opacity: 1;
+}
+
+#tutorial-text{
+    position: absolute;
+    left: 15vw; 
+    bottom: 20vh; 
+    opacity: 0;
+    transition: all 3s ease;
+
+
+
 }
 
 
