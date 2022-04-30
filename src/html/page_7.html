@@ -1,4 +1,40 @@
 <!DOCTYPE html>
 <html>
+    <head><p id="demo" onclick="ansfunc()">Click me.</p></head>
+    <body>
     <p>Chad then attends a math lecture. </p>
+<script>
+    function ansfunc(){
+        let ans = prompt("What's your favorite drink?");
+        document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+    
+var isdeath = true;
+        let start = Date.now();
+  
+        let timer = setInterval(function() {
+          let timePassed = Date.now() - start;
+  
+      
+  
+          if (timePassed > 5000){
+            isdeath = false;
+          } 
+  
+        }, 20);
+
+        let text;
+  
+  if(ans == "5"){
+      if(isdeath){
+          alert("u ded");
+      }else{
+          alert("u live");
+      }
+  }else{
+      alert("lol wrong ans");
+  }
+}
+    
+    </script>
+    </body>
 </html>
