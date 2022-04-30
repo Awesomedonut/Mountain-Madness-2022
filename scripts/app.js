@@ -46,8 +46,8 @@ window.addEventListener('load', () => {
 
                     let typewriter = new Typewriter(app, {
                         strings: [
-                        "YOu did so GOOOD",
-                        "Your so amazing!!!", 
+                        "You did so GOOOD",
+                        "You're so amazing!!!", 
                         "You totally 'Killed' it",
                         ], 
                         autoStart: true,
