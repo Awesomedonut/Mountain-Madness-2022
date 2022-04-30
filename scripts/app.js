@@ -5,9 +5,20 @@ window.addEventListener('load', () => {
     green_bar = document.getElementsByClassName('Green-Bar')[0];  
 
     title_btn.addEventListener('click', () => {
-        health = health - 20; 
-        console.log(health); 
-        green_bar.style.width = health+ "%"
+        counter = 0; 
+
+        myInterval = setInterval(()=>{
+            if (counter == 19){
+                clearInterval(myInterval)
+            }
+            health = health - 1; 
+            green_bar.style.width = health+"%"
+
+            counter++; 
+
+            console.log(health); 
+        }, 50)
+
 
         if (health <= 0){
             window.location.href = "page_1.html"
