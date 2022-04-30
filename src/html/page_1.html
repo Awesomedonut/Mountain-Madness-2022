@@ -11,10 +11,12 @@
     <body>
         Page 2 
         <img id="train" src="https://cdn.discordapp.com/attachments/969766838722494495/969814610658099200/Screen_Shot_2022-04-29_at_9.16.37_PM.png">
+        <img id="hi" src="https://lh3.googleusercontent.com/FdBCqUrTAzBcQGGPcAvu8seE21_EEQTvTOkVSK4Jwzt_QQ-qIsFgpXcwwZrzkHwtGtENoYq1SilglNoMY2I5zA=s400">
 
         <script>
 var count = 1;
             console.log("test");
+            hi.style.left = "-500px";
             // event = keyup or keydown
             document.addEventListener('keyup', event => {
     if (event.code === 'Space') {
@@ -25,6 +27,7 @@ var count = 1;
 
       if(count > 8){
         console.log("UR KILLING IT!")
+        hi.style.left = "100px";
       }
       
     }
